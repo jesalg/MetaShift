@@ -36,7 +36,7 @@
             <span id="twitter-timestamp">7:00 AM - Oct 25, 2017</span>
           </div>
           <div id="twitter-plrg-image">
-            <img src="imgs/twitter-placeholder.png" />
+            <img src="/images/twitter-placeholder.png" />
           </div>
           <div id="twitter-meta">
             <div id="twitter-plrg-headline">This Is A Headline</div>
@@ -48,7 +48,7 @@
         <!-- FB Preview -->
         <div id="fb-plrg">
           <div id="fb-plrg-image">
-            <img src="imgs/fb-placeholder.png" />
+            <img src="/images/fb-placeholder.png" />
           </div>
           <div id="fb-meta">
             <div id="fb-plrg-headline">This Is A Headline</div>
