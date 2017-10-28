@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a id="previewsh" onclick="preview();">
+    <a id="previewsh" v-on:click="showPreview = !showPreview" >
       <div id="previewshbtn">
         <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
@@ -14,7 +14,7 @@
         </svg>Open Preview
       </div>
     </a>
-    <div id="previewwrapper">
+    <div id="previewwrapper" v-bind:style="{ display: showPreview == true ? 'block' : '' }">
       <div id="previewnav" class="clearfix">
         <h2>Preview</h2>
         <a href="javascript:;" v-on:click="currentTab = 'facebook'" v-bind:class="{ previewnavitem: currentTab != 'facebook', previewnavselected: currentTab == 'facebook' }">Facebook Preview</a>
@@ -32,7 +32,8 @@ import FacebookPreview from './FacebookPreview.vue'
 export default {
   data () {
     return {
-      currentTab: 'twitter'
+      currentTab: 'twitter',
+      showPreview: false,
     }
   },
   components: {
