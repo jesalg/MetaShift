@@ -43,37 +43,20 @@ module.exports = {
         ]
       },
       {
-        test: /\.json$/,
-        use: [
-          {
-            loader: 'json-loader',
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: '[name].[ext]?[hash:7]'
-            }
-          }
-        ]
-      },
-      {
         test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader?url=false" }
-        ]
+        loader: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: {
+            loader: 'css-loader',
+            options: { minimize: true }
+          }
+        })
       },
     ]
   },
   devtool: 'eval-source-map',
   plugins: [
-    new ExtractTextPlugin("[name].min.css", {allChunks: true}),
+    new ExtractTextPlugin({publicPath: '/dist/', filename: '[name].css', allChunks: true}),
     new webpack.HotModuleReplacementPlugin()
   ]
 }
