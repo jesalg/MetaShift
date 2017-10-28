@@ -1,0 +1,597 @@
+html, body {
+	background: #F0F0F0;
+	font-family: sans-serif;
+	font-size: 1em;
+	height: 100%;
+	text-rendering: optimizeReadability;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #000;
+}
+
+/* CONTENT COLUMN */
+
+main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60%;
+}
+
+#main-wrapper {
+	width: 80%;
+	padding: 6.25em 0 0 0;
+	height: 100%;
+	margin: 0 auto;
+	max-width: 43.75em;
+}
+
+header {
+	display: block;
+}
+
+#logo {
+	width: 8.75em;
+	height: 2.5em;
+	background: url('../imgs/metashift-logo.png') no-repeat;
+	background-size:contain;
+}
+
+#base-link {
+	font-size: 0.875em;
+	color: #969696;
+	display: inline-block;
+}
+
+#base-link a:link, #base-link a:visited {
+	color: #F7476E;
+	text-decoration: none;
+}
+
+#base-link a:hover, #base-link a:active {
+	color: #BE2648;
+	text-decoration: underline;
+}
+
+#intro {
+	margin: 3em 0 0 0;
+	font-size: 1.3em;
+	line-height: 1.7em;
+	color: #686868;
+	letter-spacing: -0.0125em;
+}
+
+#formblock {
+	margin: 3.125em 0;
+	border-radius: 0 0 0.5em 0.5em;
+	border: 1px solid #DBDBDB;
+	background: #ffffff;
+	box-sizing: border-box;
+}
+
+nav {
+	box-sizing: border-box;
+	background: #1A2136;
+	color: #fff;
+	padding: 0 3.125em;
+}
+
+nav a:link, nav a:visited {
+	font-size: 0.875em;
+	transition: 0.2s;
+	width: 25%;
+	text-align: center;
+	float:left;
+	padding: 3.125em 0;
+	text-decoration: none;
+	color: #7095B4;
+	background: url('../imgs/nav-arrow.svg') center bottom no-repeat;
+	background-size: 0em;
+}
+
+nav a:hover {
+	color: #fff;
+	background-size: 1.75em;
+}
+
+nav a.selected:link, nav a.selected:visited {
+	background: url('../imgs/nav-arrow.svg') center bottom no-repeat;
+	background-size: 1.75em;
+	color: #fff;
+}
+
+.probtn {
+	font-size: 0.7em;
+	background: #F7476E;
+	padding: 0.3em;
+	color: #fff;
+	border-radius: 0.2em;
+	display: inline;
+	letter-spacing: 0.08em;
+}
+
+#basicinfo {
+	padding: 3.125em 3.125em 0 3.125em;
+}
+
+.formrow {
+	margin-top:3.125em;
+	box-sizing: border-box;
+}
+
+input[type=text], input[type=url], textarea {
+	display: block;
+	font-size: 0.9em;
+	padding: 1.1em;
+	margin: 0.6em 0 3.125em 0;
+	width: 100%;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
+    border: 1px solid #DBDBDB;
+    transition: 0.2s;
+    color: #333;
+    border-radius: 0.125em;
+    resize: vertical;
+    transition: 0.2s;
+    font-family: 'Sofia Pro', sans-serif;
+}
+
+textarea {
+	height: 6em;
+}
+
+input[type=text]:hover, input[type=url]:hover, textarea:hover {
+	border-color: #A2A2A2;
+}
+
+input[type=text]:focus, input[type=text]:active, input[type=url]:focus, input[type=url]:active, textarea:focus, textarea:active {
+	border-color: #333;
+	color: #333;
+}
+
+.formlabel {
+	font-size: 1em;
+	color: #000;
+	font-weight: 400;
+}
+
+.formfooter {
+	border-top: 1px solid #DBDBDB;
+	margin:3.215em -3.125em 0 -3.125em;
+	padding: 1.5em 3.215em;
+	
+}
+
+.formupdated {
+	float: right;
+	font-size: 0.8em;
+	color:#9B9B9B;
+	padding: 1.25em 0;
+}
+
+.normalbtn {
+	font-family: 'Sofia Pro', sans-serif;
+	font-size: 0.875em;
+	line-height: 0.875em;
+	padding: 1em 2.5em;
+	border-radius: 0.15em;
+	border:none;
+	transition: 0.2s;
+	background: #9B9B9B;
+	box-sizing: border-box;
+	color: #fff;
+}
+
+.normalbtn:hover {
+	background: #858585;
+}
+
+.savebtn {
+	background: #F7476E;
+	color: #fff;
+	margin-right: 1em;
+}
+
+.savebtn:hover {
+	background: #D23F5F;
+}
+
+a.helplink:link, a.helplink:visited {
+	float: right;
+	color: #9B9B9B;
+	font-size:0.875em;
+	text-decoration: none;
+	background: transparent url('../imgs/help-icon.svg') center right no-repeat;
+	background-size: contain;
+    padding-right: 1.5em;
+}
+
+a.helplink:hover, a.helplink:active {
+	color: #F7476E;
+	fill: #F7476E;
+}
+
+/*//////// PREVIEW ////////*/
+
+aside {
+	position: fixed;
+	top:0;
+	right: 0;
+	bottom: 0;
+	float: right;
+	background: #1A2136;
+	width: 40%;
+	min-height: 100%;
+}
+
+
+#previewwrapper {
+	margin: 6.25em auto 0 auto;
+	width: 31.25em;
+	display: block;
+}
+
+#previewsh {
+	font-family: 'Sofia Pro', sans-serif;
+	width: 100%;
+	font-size: 1em;
+	background: #1A2136;
+	border:none;
+	border-bottom: 1px solid #2C3758;
+	padding: 2em 0;
+	color: #fff;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	display: none;
+}
+
+#previewnav a{
+	float: right;
+	margin: 0.4em 0 0 2.2em;
+	padding: 0 0 0.5em 0;
+	font-size: 0.875em;
+}
+
+.previewnavitem:link, .previewnavitem:visited {
+	color: #7095B4;
+	text-decoration: none;
+}
+
+.previewnavitem:hover {
+	color: #fff;
+}
+
+.previewnavselected:link, .previewnavselected:visited {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+	text-decoration: none;
+}
+
+#previewnav h2 {
+	float: left;
+	color: #fff;
+}
+
+#twitter-plrg {
+	font-family: sans-serif;
+	width: 31.25em;
+	box-sizing: border-box;
+	padding: 1.25em;
+	background: #fff;
+	border-radius: 0.8em;
+	margin: 2em 0 0 0;
+}
+
+#twitter-nameblock{
+	float: left;
+	margin-top:0.18em;
+}
+
+#twitter-plrg-name {
+	float:left;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+#twitter-plrg-uname {
+	float:left;
+	color:#767676;
+	font-size: 0.875em;
+	clear: left;
+}
+
+#twitter-plrg-caption {
+	font-size: 0.875em;
+	line-height: 1.375em;
+	color: #1F1F1F;
+	margin: 1.125em 0;
+}
+
+#twitter-plrg-caption a:link, #twitter-plrg-caption a:visited {
+	color:#F7476E;
+	text-decoration: none;
+}
+
+#twitter-plrg-caption a:hover {
+	text-decoration: underline;
+}
+
+#twitter-timestamp {
+	display: block;
+	color: #767676;
+	margin-top: 0.25em;
+}
+
+#twitter-plrg-avatar {
+	width: 2.31em;
+	height: 2.31em;
+	border-radius: 100%;
+	background-image: url('../imgs/twitter-avatar.svg');
+	background: #333 no-repeat center center contain;
+	margin-right: 0.5em;
+	float: left;
+}
+
+#twitter-plrg-image {
+	margin: 0;
+	padding: 0;
+	height: 14.375em;
+	overflow: hidden;
+}
+
+#twitter-plrg-image img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 0.31em 0.31em 0 0;
+
+}
+
+#twitter-meta {
+	width: 100%;
+	border-radius: 0 0 0.31em 0.31em;
+	border: 1px solid #E7E7E7;
+	border-top:none;
+	box-sizing: border-box;
+	padding: 1em;
+	margin: 0;
+}
+
+#twitter-plrg-headline, #twitter-plrg-desc, #twitter-plrg-url {
+	font-size: 0.875em;
+}
+
+#twitter-plrg-headline {
+	font-weight: bold;
+	color: #000;
+}
+
+#twitter-plrg-desc {
+	color:#000;
+	margin: 0.5em 0 0 0;
+	line-height: 1.125em;
+}
+
+#twitter-plrg-url {
+	color: #969696;
+	margin: 0.75em 0 0 0;
+}
+
+#fb-plrg {
+	width:31.25em;
+	background: #fff;
+	box-sizing: border-box;
+	margin: 2em 0 0 0;
+}
+
+#fb-plrg-image {
+	height: 16.25em;
+	overflow: hidden;
+}
+
+#fb-plrg-image img {
+	max-width: 100%;
+}
+
+#fb-meta {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.875em 1em;
+
+}
+
+#fb-plrg-headline {
+	font-size: 1.25em;
+	color: #000;
+	font-family: 'Times', serif;
+}
+
+#fb-plrg-desc {
+	font-size: 0.75em;
+	line-height: 1.6em;
+	color: #000;
+	font-family: sans-serif;
+	margin-top:0.8em;
+}
+
+#fb-plrg-url {
+	font-size: 0.6em;
+	color: #90949B;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	margin-top:1.5em;
+}
+
+
+/* Responsive Preview Button */
+
+#previewsh:hover {
+	background: #1F2843;
+}
+
+.previewarrow {
+	display: inline;
+	border:1px solid red;
+}
+
+#previewsh:hover #previewshbtn, #previewsh:hover .previewarrow {
+	stroke:#F7476E;
+}
+
+#previewshbtn svg { 
+	display: inline;
+	vertical-align: middle;
+	margin-right:0.5em;
+}
+
+/* UTILITIES */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+
+@media only screen and (max-width: 1310px){
+
+body {
+	xfont-size: 14px;
+}
+
+aside{
+	width: 100%;
+	position: fixed;
+	right:auto;
+	top:auto;
+	bottom: 0;
+	z-index: 1;
+	float:none;
+	min-height: auto;
+}
+
+#previewwrapper {
+	display: none;
+	margin-bottom:6.25em;
+}
+
+#previewsh {
+	display: block;
+}
+
+#main-wrapper {
+	width: 95%;
+	max-width: 43.75em;
+}
+
+main{
+	width: 100%;
+}
+
+#formblock {
+	margin-bottom: 8.125em;
+}
+
+
+}
+
+@media only screen and (max-width: 660px){
+
+body {
+	border-top: 8px solid #F7476E;
+	font-size: 14px;
+}
+
+#main-wrapper {
+	width: 100%;
+	max-width: none;
+	padding: 3em 0 0 0;
+}
+
+header {
+	padding: 0 5%;
+}
+
+#intro {
+	margin: 1em 0 0 0;
+	padding: 0 5%;
+}
+
+#formblock {
+	margin-top:2.5em;
+}
+
+nav {
+	box-sizing: border-box;
+	padding: 0 5%;
+	white-space: nowrap;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+nav a:link, nav a:visited {
+	display: inline-block;
+	width: 10em;
+	float:none;
+}
+
+#basicinfo {
+	box-sizing: border-box;
+	padding: 2.125em 5% 0 5%;
+}
+
+.formfooter {
+	margin:3.215em -5% 0 -5%;
+	padding: 1.5em 5%;	
+}
+
+.formupdated {
+	float: none;
+	padding: 1.25em 0;
+	text-align: left;
+}
+
+.normalbtn {
+	padding: 1.5em 0;
+}
+
+.nextbtn {
+	width: 48%;
+}
+
+.savebtn {
+	width: 48%;
+	margin-right:4%;
+}
+
+#previewwrapper {
+	width: 90%;
+}
+
+#fb-plrg, #twitter-plrg {
+	font-size: 11.51px;
+}
+
+
+
+}

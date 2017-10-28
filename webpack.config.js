@@ -1,62 +1,79 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: path.join(__dirname, 'src/client/index.js'),
+  entry: {
+      home: [
+              path.join(__dirname, 'src/server/public/css/normalize.css')
+            ],
+      app:  [
+              path.join(__dirname, 'src/client/index.js'),
+              path.join(__dirname, 'src/server/public/css/normalize.css'),
+              path.join(__dirname, 'src/server/public/css/app.css'),
+            ]
+  },
   output: {
-    path: path.join(__dirname, 'src/server/public/javascripts/'),
-    publicPath: '/javascripts/',
-    filename: 'build.js'
+    path: path.join(__dirname, 'src/server/public/dist/'),
+    publicPath: '/dist/',
+    filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue']
-  },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules')
+    extensions: ['.js', '.vue']
   },
   module: {
-    preLoaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'eslint',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        exclude: /node_modules/
-      }
-    ],
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
         exclude: /node_modules/,
-        query: { presets: ['es2015'] }
+        use: [
+          { loader: 'vue-loader' }
+        ]
       },
       {
-        test: /\.vue$/,
-        loader: 'vue'
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015']
+            }
+          }
+        ]
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        use: [
+          {
+            loader: 'json-loader',
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          name: '[name].[ext]?[hash:7]'
-        }
-      }
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: '[name].[ext]?[hash:7]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader?url=false" }
+        ]
+      },
     ]
   },
   devtool: 'eval-source-map',
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  },
   plugins: [
+    new ExtractTextPlugin("[name].min.css", {allChunks: true}),
     new webpack.HotModuleReplacementPlugin()
   ]
 }
