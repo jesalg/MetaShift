@@ -5,16 +5,16 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
       home: [
-              path.join(__dirname, 'src/server/public/css/normalize.css')
+              path.join(__dirname, 'public/css/normalize.css')
             ],
       app:  [
-              path.join(__dirname, 'src/client/index.js'),
-              path.join(__dirname, 'src/server/public/css/normalize.css'),
-              path.join(__dirname, 'src/server/public/css/app.css'),
+              path.join(__dirname, 'client/index.js'),
+              path.join(__dirname, 'public/css/normalize.css'),
+              path.join(__dirname, 'public/css/app.css'),
             ]
   },
   output: {
-    path: path.join(__dirname, 'src/server/public/dist/'),
+    path: path.join(__dirname, 'public/dist/'),
     publicPath: '/dist/',
     filename: '[name].js'
   },
