@@ -19,9 +19,9 @@
             <a href="javascript:;" v-on:click="currentTab = 'facebook'" v-bind:class="{ selected: currentTab == 'facebook' }">Facebook Details</a>
             <a href="javascript:;" v-on:click="currentTab = 'pro'" v-bind:class="{ selected: currentTab == 'pro' }"><div class="probtn">&nbsp;&nbsp;PRO FEATURES&nbsp;&nbsp;</div></a>
           </nav>
-          <basic-info v-if="currentTab == 'basic'"/>
-          <twitter-info v-if="currentTab == 'twitter'"/>
-          <facebook-info v-if="currentTab == 'facebook'"/>
+          <basic-info v-bind="{meta: basicMeta}" v-if="currentTab == 'basic'"/>
+          <twitter-info v-bind="{meta: twitterMeta}" v-if="currentTab == 'twitter'"/>
+          <facebook-info v-bind="{meta: facebookMeta}" v-if="currentTab == 'facebook'"/>
           <pro-features v-if="currentTab == 'pro'"/>
         </section>
       </div>
@@ -36,10 +36,16 @@ import FacebookInfo from './components/FacebookInfo.vue'
 import ProFeatures from './components/ProFeatures.vue'
 import LinkPreview from './components/LinkPreview.vue'
 
+import Noty from 'noty'
+import 'noty/lib/noty.css'
+
 export default {
   data () {
     return {
-      currentTab: 'basic'
+      currentTab: 'basic',
+      basicMeta: {},
+      twitterMeta: {},
+      facebookMeta: {}
     }
   },
   components: {
@@ -48,6 +54,21 @@ export default {
     'facebook-info': FacebookInfo,
     'pro-features': ProFeatures,
     'link-preview': LinkPreview
+  },
+  methods: {
+    save() {
+      const data = {
+        link: this.basicMeta['url'],
+        meta: this.basicMeta,
+        facebookMeta: this.facebookMeta,
+        twitterMeta: this.twitterMeta
+      }
+      this.$http.post('/link', data).then(function() {
+        new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
+      }, function() {
+
+      });
+    }
   }
 }
 </script>
