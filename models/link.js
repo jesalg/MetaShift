@@ -1,4 +1,6 @@
 'use strict';
+import shortid from 'shortid';
+
 module.exports = (sequelize, DataTypes) => {
   var Link = sequelize.define('Link', {
     url: DataTypes.STRING,
@@ -7,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     twitterMeta: DataTypes.JSONB,
     email: { type: DataTypes.STRING, validate: {isEmail: true} },
     editHash: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, unique: true },
-    viewHash: { type: DataTypes.UUID, defaultValue: function() { return 'e3f69b51-bdbc-4698-8281-d8ccd8ebf550'}, unique: true },
+    viewHash: { type: DataTypes.STRING, defaultValue: function() { return shortid.generate() }, unique: true },
   }, {
     classMethods: {
       associate: function(models) {

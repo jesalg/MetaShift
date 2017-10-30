@@ -22,8 +22,8 @@ router.post('/link', function(req, res, next) {
       meta: req.body.meta,
       twitterMeta: req.body.twitterMeta,
       facebookMeta: req.body.facebookMeta,
-    }).then(function() {
-      res.json({"foo": "bar"});
+    }).then(function(link) {
+      res.json(link.get({plain: true}));
     });
 })
 
