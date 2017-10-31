@@ -1,7 +1,7 @@
 <template>
   <div>
     <aside>
-      <link-preview/>
+      <link-preview v-bind="{twitterMeta: twitterMeta, facebookMeta: facebookMeta}"/>
     </aside>
     <main>
       <div id="main-wrapper">
@@ -56,6 +56,14 @@ export default {
     'link-preview': LinkPreview
   },
   methods: {
+    sync(key) {
+      if (!this.twitterMeta[key]) {
+        this.$set(this.twitterMeta, key, this.basicMeta[key])
+      }
+      if (!this.facebookMeta[key]) {
+        this.$set(this.facebookMeta, key, this.basicMeta[key])
+      }
+    },
     save() {
       const data = {
         link: this.basicMeta['url'],

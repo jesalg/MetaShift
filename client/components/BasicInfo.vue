@@ -4,12 +4,12 @@
     <div class="formrow">
       <label for="basic-title" class="formlabel">Title (Required)</label>
       <a href="#" class="helplink">Help</a>
-      <input type="text" id="basic-title" v-model="meta['title']" class="textinput" placeholder="Give it a catchy title" />
+      <input type="text" id="basic-title" v-model="meta['title']" v-on:blur="sync('title')" class="textinput" placeholder="Give it a catchy title" />
     </div>
     <div class="formrow">
       <label for="basic-description" class="formlabel">Description</label>
       <a href="#" class="helplink">Help</a>
-      <textarea type="text" id="basic-description" v-model="meta['description']" class="textinput" placeholder="Make your description something good" ></textarea>
+      <textarea type="text" id="basic-description" v-model="meta['description']" v-on:blur="sync('description')" class="textinput" placeholder="Make your description something good" ></textarea>
     </div>
     <div class="formrow">
       <label for="basic-tags" class="formlabel">Tags (comma separated)</label>
@@ -37,6 +37,9 @@ export default {
   methods: {
     save() {
       this.$parent.save();
+    },
+    sync(key) {
+      this.$parent.sync(key);
     },
     next() {
       this.$parent.currentTab = 'twitter';

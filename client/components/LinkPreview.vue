@@ -20,8 +20,8 @@
         <a href="javascript:;" v-on:click="currentTab = 'facebook'" v-bind:class="{ previewnavitem: currentTab != 'facebook', previewnavselected: currentTab == 'facebook' }">Facebook Preview</a>
         <a href="javascript:;" v-on:click="currentTab = 'twitter'" v-bind:class="{ previewnavitem: currentTab != 'twitter', previewnavselected: currentTab == 'twitter' }">Twitter Preview</a>
       </div>
-      <twitter-preview v-if="currentTab == 'twitter'"/>
-      <facebook-preview v-if="currentTab == 'facebook'"/>
+      <twitter-preview v-bind="{meta: twitterMeta}" v-if="currentTab == 'twitter'"/>
+      <facebook-preview v-bind="{meta: facebookMeta}" v-if="currentTab == 'facebook'"/>
     </div>
   </div>
 </template>
@@ -30,6 +30,10 @@
 import TwitterPreview from './TwitterPreview.vue'
 import FacebookPreview from './FacebookPreview.vue'
 export default {
+  props: {
+    twitterMeta: {},
+    facebookMeta: {}
+  },
   data () {
     return {
       currentTab: 'twitter',
