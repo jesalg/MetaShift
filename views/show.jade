@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title= link.meta.title
+    meta(http-equiv='refresh', content='1; url=' + link.url)
+    script.
+      window.location.href = "#{link.url}"
+    // Search Engine
+    link(rel='canonical', href=link.url)
+    meta(name='description', content=link.meta.description)
+    meta(name='image', content=link.meta.image)
+    // Schema.org for Google
+    meta(itemprop='name', content=link.meta.title)
+    meta(itemprop='description', content=link.meta.description)
+    meta(itemprop='image', content=link.meta.image)
+    // Twitter
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:title', content=link.twitterMeta.title)
+    meta(name='twitter:description', content=link.twitterMeta.description)
+    meta(name='twitter:site', content=link.twitterMeta.publisher)
+    meta(name='twitter:creator', content=link.twitterMeta.creator)
+    meta(name='twitter:image:src', content=link.twitterMeta.image)
+    meta(name='twitter:player', content=link.twitterMeta.player)
+    // Open Graph general (Facebook, Pinterest & Google+)
+    meta(name='og:title', content=link.facebookMeta.title)
+    meta(name='og:description', content=link.facebookMeta.description)
+    meta(name='og:image', content=link.facebookMeta.image)
+    meta(name='og:url', content=link.url)
+    meta(name='og:site_name', content=link.facebookMeta.publisher)
+    meta(name='og:locale', content='en-US')
+    meta(name='og:video', content=link.facebookMeta.video)
+    meta(name='fb:admins', content=link.facebookMeta.adminId)
+    meta(name='fb:app_id', content=link.facebookMeta.appId)
+    meta(name='og:type', content='website')
+  body
+    p.
+      If you are not redirected automatically, click on #[a(href="#{link.url}") this link].
