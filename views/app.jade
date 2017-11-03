@@ -3,12 +3,12 @@ html
   head
     title= title
     meta(charset='utf-8')
-    title MetaShift - URL THEY ARE EDITING
+    title MetaShift
     script(src='https://use.typekit.net/vkt3faw.js')
     script.
       try{Typekit.load({ async: true });}catch(e){}
     
   body.tk-sofia-pro
-    #app
+    #app(data-link-json="#{JSON.stringify(link)}")
   script(src='/dist/app.js')
   link(rel='stylesheet', href='/dist/app.css')

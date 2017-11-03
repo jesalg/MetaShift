@@ -8,18 +8,19 @@ router.get('/', function(req, res, next) {
   res.render('index', {})
 })
 
-router.get('/new', function(req, res, next) {
-  res.render('app', {})
+router.get('/link', function(req, res, next) {
+  res.render('app', {link: models.Link.build({
+    url: null, meta: {}, twitterMeta: {}, facebookMeta: {}, updatedAt: null
+  }).toJSON()})
 })
 
-router.get('/edit/:edit_hash', function(req, res, next) {
-  models.Link.findOne({ where: {editHash: req.params.edit_hash} }).then(link => {
-  }).then(() => {
+router.get('/link/:edit_hash', function(req, res, next) {
+  models.Link.findOne({ where: {editHash: req.params.edit_hash} }).then((link) => {
     res.render('app', {link: link})
   })
 })
 
-router.post('/create', function(req, res, next) {
+router.post('/link', function(req, res, next) {
   models.Link.create({
       url: req.body.link,
       meta: req.body.meta,
@@ -30,8 +31,8 @@ router.post('/create', function(req, res, next) {
     });
 })
 
-router.patch('/update/:edit_hash', function(req, res, next) {
-  models.Link.findOne({ where: {editHash: req.params.edit_hash} }).then(link => {
+router.patch('/link/:id', function(req, res, next) {
+  models.Link.findOne({ where: {id: req.params.id} }).then(link => {
     link.update({
       url: req.body.link,
       meta: req.body.meta,

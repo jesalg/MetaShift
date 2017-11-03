@@ -24,7 +24,7 @@
     <div class="formfooter">
       <button type="submit" class="normalbtn savebtn" v-on:click.stop.prevent="save">Save</button>
       <button type="submit" class="normalbtn nextbtn" v-on:click.stop.prevent="next">Next</button>
-      <div class="formupdated">Last Updated 2:30pm / Oct. 25, 2017</div>
+      <div class="formupdated" v-if="updatedAt">Last Updated {{updatedAt | formatDate}}</div>
     </div>
   </form>
 </template>
@@ -32,7 +32,8 @@
 <script>
 export default {
   props: {
-    meta: {}
+    meta: {},
+    updatedAt: {}
   },
   methods: {
     save() {

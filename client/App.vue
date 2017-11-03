@@ -1,13 +1,13 @@
 <template>
   <div>
     <aside>
-      <link-preview v-bind="{twitterMeta: twitterMeta, facebookMeta: facebookMeta}"/>
+      <link-preview v-bind="{twitterMeta: link.twitterMeta, facebookMeta: link.facebookMeta}"/>
     </aside>
     <main>
       <div id="main-wrapper">
         <header class="clearfix">
           <div id="logo"></div>
-          <div id="base-link">You are customizing this link: <a href="#" target="_blank">https://websitename.com/product</a></div>
+          <div id="base-link" v-if="link.meta['url']">You are customizing this link: <a v-bind:href="link.meta['url']" target="_blank">{{link.meta['url']}}</a></div>
         </header>
         <section id="intro">
           Use the forms below to customize how your link will appear on social media. Once you are happy with it’s appearance, you can use the new Metashifted link we provide to share on social media.
@@ -19,9 +19,9 @@
             <a href="javascript:;" v-on:click="currentTab = 'facebook'" v-bind:class="{ selected: currentTab == 'facebook' }">Facebook Details</a>
             <a href="javascript:;" v-on:click="currentTab = 'pro'" v-bind:class="{ selected: currentTab == 'pro' }"><div class="probtn">&nbsp;&nbsp;PRO FEATURES&nbsp;&nbsp;</div></a>
           </nav>
-          <basic-info v-bind="{meta: basicMeta}" v-if="currentTab == 'basic'"/>
-          <twitter-info v-bind="{meta: twitterMeta}" v-if="currentTab == 'twitter'"/>
-          <facebook-info v-bind="{meta: facebookMeta}" v-if="currentTab == 'facebook'"/>
+          <basic-info v-bind="{meta: link.meta, updatedAt: link.updatedAt}" v-if="currentTab == 'basic'"/>
+          <twitter-info v-bind="{meta: link.twitterMeta, updatedAt: link.updatedAt}" v-if="currentTab == 'twitter'"/>
+          <facebook-info v-bind="{meta: link.facebookMeta, updatedAt: link.updatedAt}" v-if="currentTab == 'facebook'"/>
           <pro-features v-if="currentTab == 'pro'"/>
         </section>
       </div>
@@ -43,9 +43,7 @@ export default {
   data () {
     return {
       currentTab: 'basic',
-      basicMeta: {},
-      twitterMeta: {},
-      facebookMeta: {}
+      link: {}
     }
   },
   components: {
@@ -57,26 +55,34 @@ export default {
   },
   methods: {
     sync(key) {
-      if (!this.twitterMeta[key]) {
-        this.$set(this.twitterMeta, key, this.basicMeta[key])
+      if (!this.link.twitterMeta[key]) {
+        this.$set(this.link.twitterMeta, key, this.link.meta[key])
       }
-      if (!this.facebookMeta[key]) {
-        this.$set(this.facebookMeta, key, this.basicMeta[key])
+      if (!this.link.facebookMeta[key]) {
+        this.$set(this.link.facebookMeta, key, this.link.meta[key])
       }
     },
     save() {
       const data = {
-        link: this.basicMeta['url'],
-        meta: this.basicMeta,
-        facebookMeta: this.facebookMeta,
-        twitterMeta: this.twitterMeta
+        link: this.link.meta['url'],
+        meta: this.link.meta,
+        facebookMeta: this.link.facebookMeta,
+        twitterMeta: this.link.twitterMeta
       }
-      this.$http.post('/link', data).then(function() {
-        new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
-      }, function() {
+      const request = this.link.id ? this.$http.patch('/link/' + this.link.id, data) :
+                        this.$http.post('/link', data)
+      request.then((response) => {
+        this.link.id = response.body.id;
+        this.link.updatedAt = response.body.updatedAt;
 
+        new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
+      }, () => {
+        //show error
       });
     }
+  },
+  created() {
+    this.link = this.$parent.link;
   }
 }
 </script>
