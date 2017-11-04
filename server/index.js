@@ -11,6 +11,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import router from './router'
 import config from '../webpack.config'
 
+const NODE_ENV = process.env.NODE_ENV || 'development';
 const app = express()
 
 // view engine setup
@@ -25,14 +26,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join('public')))
 
-const compiler = webpack(config)
 
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath,
-  stats: { colors: true }
-}))
-
-app.use(webpackHotMiddleware(compiler))
+if (NODE_ENV === 'production') {
+  app.use(express.static(__dirname + '/dist'));
+} else {
+  const compiler = webpack(config)
+  app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    stats: { colors: true }
+  }))
+  app.use(webpackHotMiddleware(compiler))
+}
 
 app.use('/', router)
 
@@ -53,6 +57,6 @@ app.use(function(err, req, res, next) {
   })
 })
 
-app.listen(4000)
+app.listen(process.env.PORT || 4000)
 
 export default app
