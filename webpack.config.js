@@ -6,10 +6,11 @@ var isProd = (process.env.NODE_ENV === 'production');
 var config = {
   entry: {
       home: [
+              path.join(__dirname, 'client/home.js'),
               path.join(__dirname, 'public/css/normalize.css')
             ],
       app:  [
-              path.join(__dirname, 'client/index.js'),
+              path.join(__dirname, 'client/app.js'),
               path.join(__dirname, 'public/css/normalize.css'),
               path.join(__dirname, 'public/css/app.css'),
             ]

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import moment from 'moment'
-import App from './App'
+import App from './App.vue'
 
 Vue.filter('formatDate', function(value) {
   if (value) {

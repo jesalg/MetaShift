@@ -9,4 +9,4 @@ MetaShift
 
 2. Run the application
 
-   `npm run dev`
+   `npm run start`
