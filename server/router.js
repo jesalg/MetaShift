@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/link', function(req, res, next) {
   res.render('app', {link: models.Link.build({
-    url: null, meta: {}, twitterMeta: {}, facebookMeta: {}, updatedAt: null
+    url: req.query.url, meta: {url: req.query.url}, twitterMeta: {}, facebookMeta: {}, updatedAt: null
   }).toJSON()})
 })
 
