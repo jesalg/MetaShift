@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
+import VTooltip from 'v-tooltip'
 import moment from 'moment'
 import App from './App.vue'
 
@@ -9,6 +10,7 @@ Vue.filter('formatDate', function(value) {
   }
 });
 Vue.use(VueResource);
+Vue.use(VTooltip, {defaultOffset: 5})
 Vue.config.debug = true
 
 new Vue({

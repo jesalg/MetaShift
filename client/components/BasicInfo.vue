@@ -3,7 +3,7 @@
     <h2>Basic Information</h2>
     <div class="formrow">
       <label for="basic-title" class="formlabel">Title (Required)</label>
-      <a href="#" class="helplink">Help</a>
+      <a href="#" class="helplink" v-tooltip="'Hello world'">Help</a>
       <input type="text" id="basic-title" v-model="meta['title']" v-on:blur="sync('title')" class="textinput" placeholder="Give it a catchy title" />
     </div>
     <div class="formrow">

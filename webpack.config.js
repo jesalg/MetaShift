@@ -13,6 +13,7 @@ var config = {
               path.join(__dirname, 'client/app.js'),
               path.join(__dirname, 'public/css/normalize.css'),
               path.join(__dirname, 'public/css/app.css'),
+              path.join(__dirname, 'public/css/tooltip.css'),
             ]
   },
   output: {
