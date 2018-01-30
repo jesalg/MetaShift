@@ -1,12 +1,13 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='utf-8')
     title MetaShift
     script(src='https://use.typekit.net/vkt3faw.js')
     script.
       try{Typekit.load({ async: true });}catch(e){}
-  body.tk-sofia-pro
+
+  body
     #home
   script(src='/dist/home.js')
   link(rel='stylesheet', href='/dist/home.css')

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-13" transform="translate(-1168.000000, -146.000000)" stroke="#7095B4">
+            <g id="Chrome-CTA" transform="translate(922.000000, 144.000000)">
+                <g id="Icon" transform="translate(246.000000, 3.000000)">
+                    <circle id="Oval" stroke-linecap="square" cx="11.4782609" cy="10.5217391" r="3.82608696"></circle>
+                    <path d="M11.4782609,6.69565217 L21.1630435,6.69565217" id="Shape"></path>
+                    <path d="M14.7916522,12.4347826 L9.88086957,20.9401739" id="Shape"></path>
+                    <path d="M8.16486957,12.4347826 L3.21391304,3.86052174" id="Shape"></path>
+                    <circle id="Oval" stroke-linecap="square" cx="11.3586957" cy="10.5217391" r="10.5217391"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

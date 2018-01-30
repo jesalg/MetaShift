@@ -7,7 +7,8 @@ var config = {
   entry: {
       home: [
               path.join(__dirname, 'client/home.js'),
-              path.join(__dirname, 'public/css/normalize.css')
+              path.join(__dirname, 'public/css/normalize.css'),
+              path.join(__dirname, 'public/css/home.css')
             ],
       app:  [
               path.join(__dirname, 'client/app.js'),
@@ -44,6 +45,13 @@ var config = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg/,
+        use: {
+            loader: 'svg-url-loader',
+            options: {}
+          }
       },
       {
         test: /\.css$/,

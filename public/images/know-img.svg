@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="423px" height="243px" viewBox="0 0 423 243" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-13" transform="translate(-760.000000, -1202.000000)">
+            <g id="Group-10" transform="translate(761.000000, 1196.000000)">
+                <g id="Group-3" transform="translate(0.000000, 30.000000)">
+                    <g id="Group-2" transform="translate(314.029412, 0.000000)" stroke="#8C909A">
+                        <ellipse id="Oval" stroke-width="2" fill="#F5F5F5" cx="53.3382353" cy="53.5290698" rx="53.3382353" ry="53.5290698"></ellipse>
+                        <g id="ui-24px-outline-2_link-72" transform="translate(28.178690, 28.279509)" stroke-width="3" stroke-linecap="square">
+                            <path d="M29.6567573,21.7923136 L29.6567573,21.7923136 C34.8596972,27.0057858 34.8596972,35.0866676 29.6567573,40.3001397 L22.3726415,47.5990008 C17.1697016,52.8124729 9.1051448,52.8124729 3.90220491,47.5990008 L3.90220491,47.5990008 C-1.30073497,42.3855286 -1.30073497,34.3046468 3.90220491,29.0911746 L10.4058798,22.835008" id="Shape"></path>
+                            <path d="M21.6687143,29.7167913 L21.6687143,29.7167913 C16.4657745,24.5033191 16.4657745,16.4224373 21.6687143,11.2089651 L28.9528302,3.91010411 C34.1557701,-1.30336804 42.2203269,-1.30336804 47.4232668,3.91010411 L47.4232668,3.91010411 C52.6262067,9.12357627 52.6262067,17.2044581 47.4232668,22.4179303 L40.9195919,28.6740968" id="Shape"></path>
+                        </g>
+                    </g>
+                    <g id="Group" transform="translate(152.558824, 82.883721)" stroke="#8C909A">
+                        <path d="M87.8882194,0 L22.0948252,0 C9.94247951,0 0,9.67823657 0,21.50574 L0,85.5505322 C0,97.379903 9.94247951,107.05814 22.0948252,107.05814 L87.8882194,107.05814 C100.038647,107.05814 109.981126,97.379903 109.981126,85.5505322 L109.981126,21.50574 C109.981126,9.67823657 100.038647,0 87.8882194,0 L87.8882194,0 Z" id="Fill-1" stroke-width="2" fill="#F5F5F5"></path>
+                        <polyline id="Shape" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="48.4921749 20.199649 59.6049649 30.8044647 48.4921749 41.4092804"></polyline>
+                        <polyline id="Shape-Copy-3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.761468, 30.804465) scale(-1, 1) translate(-25.761468, -30.804465) " points="20.2050729 20.199649 31.3178629 30.8044647 20.2050729 41.4092804"></polyline>
+                    </g>
+                    <g id="location-24px-outline_world" stroke="#8C909A">
+                        <ellipse id="Oval" stroke-width="2" fill="#F5F5F5" cx="53.3382353" cy="53.5290698" rx="53.3382353" ry="53.5290698"></ellipse>
+                        <path d="M22.0436233,9.30940344 C25.3909826,11.7450032 28.2601476,14.6677229 30.6511185,19.0518024 C32.5638952,22.461642 37.345837,32.6911609 33.0420894,38.5366003 C28.2601476,44.8691596 13.9143223,47.3047593 13.9143223,53.1501987 C13.9143223,57.5342782 20.1308466,62.8925976 23.4782058,67.7637971 C28.2601476,75.0705963 26.3473709,82.3773955 23.4782058,87.248595 C22.0436233,89.6841947 19.6526524,91.6326745 17.2616815,93.0940344" id="Shape" stroke-width="3"></path>
+                        <path d="M95.081202,21.1521358 C84.9353421,26.6919809 70.4412564,30.2173368 68.0255754,30.2173368 C63.1942136,30.7209591 62.2279412,26.1883586 58.3628517,20.1448912 C55.4640345,15.6122907 48.7001279,9.56882333 48.7001279,5.03622281 C48.7001279,3.02173368 48.7001279,1.51086684 49.1832641,0" id="Shape" stroke-width="3"></path>
+                        <path d="M88.1240409,58.6264005 C88.1240409,73.5133592 68.2896381,91.7618892 58.3724367,87.9200934 C49.4469555,84.5585221 55.8931364,77.8353795 53.413836,58.6264005 C52.4221159,50.942809 61.3475972,44.2196663 70.7689385,44.2196663 C80.1902798,44.2196663 88.1240409,50.4625845 88.1240409,58.6264005 Z" id="Shape" stroke-width="3"></path>
+                    </g>
+                    <g id="Left-Arrow" transform="translate(120.441176, 19.569767)" stroke="#46CCD3" stroke-width="3" stroke-linecap="round">
+                        <path d="M61.2242647,38.4948837 C50.1039571,15.6904505 26.8658606,0 0,0" id="Oval-3"></path>
+                        <polyline id="Shape" stroke-linejoin="round" transform="translate(64.235294, 44.066512) rotate(-26.000000) translate(-64.235294, -44.066512) " points="71.2610294 40.5209302 64.2352941 47.612093 57.2095588 40.5209302"></polyline>
+                    </g>
+                    <g id="Right-Arrow" transform="translate(223.676471, 19.569767)" stroke="#F7476E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline id="Shape-Copy" transform="translate(68.250000, 7.482558) rotate(-90.000000) translate(-68.250000, -7.482558) " points="75.2757353 3.99069767 68.25 10.9744186 61.2242647 3.99069767"></polyline>
+                        <path d="M61.2242647,44.8953488 C50.1039571,22.4364373 26.8658606,6.98372093 0,6.98372093" id="Oval-3-Copy" transform="translate(30.612132, 25.939535) scale(-1, 1) translate(-30.612132, -25.939535) "></path>
+                    </g>
+                </g>
+                <text id="YOUR-Link" font-family="Europa-Bold" font-size="13" font-weight="bold" letter-spacing="2" fill="#4A4A4A">
+                    <tspan x="327" y="16">YOUR Lin</tspan>
+                    <tspan x="398.367" y="16">k</tspan>
+                </text>
+                <text id="SOCIAL" font-family="Europa-Bold" font-size="13" font-weight="bold" letter-spacing="2" fill="#4A4A4A">
+                    <tspan x="25" y="16">SOCIAL</tspan>
+                </text>
+                <text id="METASHIFT" font-family="Europa-Bold" font-size="13" font-weight="bold" letter-spacing="2" fill="#4A4A4A">
+                    <tspan x="164" y="248">METASHIFT</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
