@@ -6,7 +6,7 @@
     <main>
       <div id="main-wrapper">
         <header class="clearfix">
-          <div id="logo"></div>
+          <a href="/"><div id="logo"></div></a>
           <div id="base-link" v-if="link.meta['url']">You are customizing this link: <a v-bind:href="link.meta['url']" target="_blank">{{link.meta['url']}}</a></div>
         </header>
         <section id="intro">
@@ -63,21 +63,25 @@ export default {
       }
     },
     save() {
-      const data = {
-        link: this.link.meta['url'],
-        meta: this.link.meta,
-        facebookMeta: this.link.facebookMeta,
-        twitterMeta: this.link.twitterMeta
-      }
-      const request = this.link.id ? this.$http.patch('/link/' + this.link.id, data) :
-                        this.$http.post('/link', data)
-      request.then((response) => {
-        this.link.id = response.body.id;
-        this.link.updatedAt = response.body.updatedAt;
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          const data = {
+            link: this.link.meta['url'],
+            meta: this.link.meta,
+            facebookMeta: this.link.facebookMeta,
+            twitterMeta: this.link.twitterMeta
+          }
+          const request = this.link.id ? this.$http.patch('/link/' + this.link.id, data) :
+                            this.$http.post('/link', data)
+          request.then((response) => {
+            this.link.id = response.body.id;
+            this.link.updatedAt = response.body.updatedAt;
 
-        new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
-      }, () => {
-        //show error
+            new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
+          }, () => {
+            //show error
+          });
+        }
       });
     }
   },

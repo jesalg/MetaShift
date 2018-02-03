@@ -8,7 +8,8 @@ var config = {
       home: [
               path.join(__dirname, 'client/home.js'),
               path.join(__dirname, 'public/css/normalize.css'),
-              path.join(__dirname, 'public/css/home.css')
+              path.join(__dirname, 'public/css/home.css'),
+              path.join(__dirname, 'public/css/tooltip.css'),
             ],
       app:  [
               path.join(__dirname, 'client/app.js'),

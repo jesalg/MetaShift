@@ -497,3 +497,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/** FORM VALIDATION **/
+
+.error {
+  border-color: rgb(255, 56, 96) !important;
+}

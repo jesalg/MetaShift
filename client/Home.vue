@@ -5,11 +5,9 @@
       <span id="chromeextension">Grab Our <a href="" target="_blank">Chrome Extension</a></span>
     </div>
     <h1  class="set-width intro-h1">Easily customize link previews on social media</h1>
-    <div id="form-getstarted" class="set-width">
-    <form>
-      <input type="url" v-model="url" placeholder="Enter the url you want to customize"/>
+    <div id="form-getstarted" class="set-width" v-tooltip="{ content: 'Please enter a valid URL', trigger: 'manual', show: errors.has('url')}">
+      <input name="url" type="url" v-model="url" v-validate="{required: true, url: true}" placeholder="Enter the url you want to customize"/>
       <button type="submit" @click="start">Get Started</button>
-    </form>
     </div>
     <div id="salestext" class="set-width intro-h1">
       No more waiting for the IT department to edit code so you can share a page. With MetaShift you can customize your link preview yourself.<br/> <span class="pinkhighlight">Absolutely no coding</span> 
@@ -79,8 +77,15 @@ export default {
     }
   },
   methods: {
-    start() {
-      window.location = `/link?url=${this.url}`
+    start(e) {
+      this.$validator.validateAll().then((result) => {
+        console.log(this.$validator)
+        console.log(result)
+        if (result) {
+          window.location = `/link?url=${this.url}`
+        }
+      });
+      
     }
   }
 }
