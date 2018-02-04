@@ -59,33 +59,53 @@
 
   <section id="signupform">
     <div class="set-width">
-      <h3>We are actively building a product to make managing social media links a breeze. Subscribe below to learn more.</h3>
-      <form>
-        <input type="email" placeholder="Enter Your Email Address"/>
-        <button>Subscribe</button>
-      </form>
+      <template v-if="!subscribed">
+        <h3>We are actively building a product to make managing social media links a breeze. Subscribe below to learn more.</h3>
+        <input name="email" type="email" v-model="email" v-validate="{required: true, email: true}" placeholder="Enter Your Email Address" v-tooltip="{ content: 'Please enter a valid email', trigger: 'manual', show: errors.has('email')}"/>
+        <button @click="subscribe">Subscribe</button>
+      </template>
+      <template v-else>
+        <h3>Thanks, we will keep you posted!</h3>
+      </template>
     </div>
   </section>
   </div>
 </template>
 
 <script>
+import Noty from 'noty'
+import 'noty/lib/noty.css'
+
 export default {
   data () {
     return {
-      url: null
+      url: null,
+      email: null,
+      subscribed: false
     }
   },
   methods: {
     start(e) {
-      this.$validator.validateAll().then((result) => {
-        console.log(this.$validator)
-        console.log(result)
+      this.$validator.validate('url').then((result) => {
         if (result) {
           window.location = `/link?url=${this.url}`
         }
       });
-      
+    },
+    subscribe(e) {
+      this.$validator.validate('email').then((result) => {
+        if (result) {
+          const data = {
+            email: this.email
+          }
+          const request = this.$http.post('/contact', data)
+          request.then((response) => {
+            this.subscribed = true;
+          }, () => {
+            new Noty({text: 'Whoops! Something went wrong, try again later.', type: 'error', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
+          });
+        }
+      });
     }
   }
 }

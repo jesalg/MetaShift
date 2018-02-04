@@ -1,5 +1,6 @@
 import express from 'express'
 import models  from '../models';
+import request from 'request';
 
 const router = express.Router()
 
@@ -42,6 +43,28 @@ router.patch('/link/:id', function(req, res, next) {
       res.json(link.get({plain: true}));
     })
   })
+})
+
+router.post('/contact', function(req, res, next) {
+  const options = {
+    url: 'https://api.sendgrid.com/v3/contactdb/recipients',
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer ' + process.env.SENDGRID_MARKETING_API_KEY
+    },
+    body: [{email: req.body.email}],
+    json: true
+  };
+  
+  function callback(error, response, body) {
+    if (!error && (response.statusCode >= 200 || response.statusCode <= 202)) {
+      res.json({status: 'success'})
+    } else {
+      res.status(response.statusCode).json({status: 'error'})
+    }
+  }
+
+  request(options, callback);
 })
 
 router.get('/:view_hash', function(req, res, next) {
