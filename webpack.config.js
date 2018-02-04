@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var SaveHashes = require('assets-webpack-plugin');
 var isProd = (process.env.NODE_ENV === 'production');
 
 var config = {
@@ -21,7 +22,7 @@ var config = {
   output: {
     path: path.join(__dirname, 'public/dist/'),
     publicPath: '/dist/',
-    filename: '[name].js'
+    filename: '[name].[hash].js'
   },
   resolve: {
     extensions: ['.js', '.vue']
@@ -68,7 +69,8 @@ var config = {
   },
   devtool: 'eval-source-map',
   plugins: [
-    new ExtractTextPlugin({publicPath: '/dist/', filename: '[name].css', allChunks: true}),
+    new SaveHashes({path: path.join(__dirname, 'config')}),
+    new ExtractTextPlugin({publicPath: '/dist/', filename: '[name].[hash].css', allChunks: true}),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {

@@ -9,5 +9,5 @@ html(lang='en')
 
   body
     #home
-  script(src='/dist/home.js')
-  link(rel='stylesheet', href='/dist/home.css')
+  script(src="#{webpack_asset('home', 'js')}")
+  link(rel='stylesheet', href="#{webpack_asset('home', 'css')}")

@@ -7,6 +7,7 @@ import bodyParser from 'body-parser'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
+import webpackAssets from 'express-webpack-assets'
 
 import router from './router'
 import config from '../webpack.config'
@@ -26,7 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join('public')))
 
-
 if (NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/dist'));
 } else {
@@ -37,6 +37,9 @@ if (NODE_ENV === 'production') {
   }))
   app.use(webpackHotMiddleware(compiler))
 }
+app.use(webpackAssets('./config/webpack-assets.json', {
+	devMode: NODE_ENV !== 'production'
+}));
 
 app.use('/', router)
 

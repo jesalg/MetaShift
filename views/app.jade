@@ -9,5 +9,5 @@ html(lang='en')
       
   body.tk-sofia-pro
     #app(data-link-json="#{JSON.stringify(link)}")
-  script(src='/dist/app.js')
-  link(rel='stylesheet', href='/dist/app.css')
+  script(src="#{webpack_asset('app', 'js')}")
+  link(rel='stylesheet', href="#{webpack_asset('app', 'css')}")
