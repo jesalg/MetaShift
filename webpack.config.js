@@ -27,7 +27,7 @@ var config = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      vue: isProd ? 'vue/dist/vue.js' : 'vue/dist/vue.js',
+      vue: isProd ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js',
     }
   },
   module: {
@@ -75,11 +75,11 @@ var config = {
     new SaveHashes({path: path.join(__dirname, 'config')}),
     new ExtractTextPlugin({publicPath: '/dist/', filename: '[name].[hash].css', allChunks: true}),
     new webpack.HotModuleReplacementPlugin(),
-    /*new webpack.DefinePlugin({
+    new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
-    })*/
+    })
   ]
 }
 

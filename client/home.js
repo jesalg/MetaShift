@@ -7,7 +7,6 @@ import Home from './Home.vue'
 Vue.use(VeeValidate);
 Vue.use(VueResource);
 Vue.use(VTooltip, {defaultOffset: 5})
-Vue.config.debug = true
 
 new Vue({
   el: '#home',

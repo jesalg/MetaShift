@@ -13,7 +13,6 @@ Vue.filter('formatDate', function(value) {
 Vue.use(VeeValidate);
 Vue.use(VueResource);
 Vue.use(VTooltip, {defaultOffset: 5})
-Vue.config.debug = true
 
 new Vue({
   el: '#app',
