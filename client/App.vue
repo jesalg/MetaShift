@@ -24,6 +24,13 @@
           <facebook-info v-bind="{meta: link.facebookMeta, updatedAt: link.updatedAt}" v-if="currentTab == 'facebook'"/>
           <pro-features v-if="currentTab == 'pro'"/>
         </section>
+        <section id="metalink">
+        	Here’s your new link to share on social media
+        	<div>
+        		<input type="url" value="https://metashift.io/4isd8" />
+        		<button href="#">Copy</button>
+        	</div>
+        </section>
       </div>
     </main>
   </div>

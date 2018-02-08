@@ -12,6 +12,14 @@ h2 {
 	color: #000;
 }
 
+h3 {
+	font-size:1em;
+	font-weight: 600;
+	margin: 0 0 0.4em 0;
+	padding: 0;
+	color: #333;
+}
+
 /* CONTENT COLUMN */
 
 main {
@@ -72,6 +80,52 @@ header {
 	box-sizing: border-box;
 }
 
+#metalink {
+	text-align: center;
+	margin-bottom: 3.125em;
+}
+
+#metalink div {
+	text-align: left;
+	width: 80%;
+	background: #fff;
+	-webkit-box-shadow: 0px 10px 36px -8px rgba(0,0,0,0.46);
+	-moz-box-shadow: 0px 10px 36px -8px rgba(0,0,0,0.46);
+	box-shadow: 0px 10px 36px -8px rgba(0,0,0,0.46);
+	margin: 2em auto 0 auto;
+	clear: both;
+	padding: 1.2em;
+	box-sizing: border-box;
+}
+
+#metalink input[type=url] {
+	width: 80%;
+	display: inline;
+	margin: 0;
+	padding: 0.5em 1em;
+	box-sizing: border-box;
+	border:none;
+	outline: none;
+}
+
+#metalink button {
+	width: 19%;
+	background: none;
+	border: none;
+	text-align: center;
+	color: #F7476E;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#metalink button:hover {
+	color: #BE2648;
+	text-decoration: underline;
+}
+
 nav {
 	box-sizing: border-box;
 	background: #1A2136;
@@ -117,6 +171,30 @@ nav a.selected:link, nav a.selected:visited {
 	padding: 3.125em 3.125em 0 3.125em;
 }
 
+#basicinfo hr {
+	outline: none;
+	border: none;
+	border-top:1px solid #ccc;
+	margin: 2em 0;
+}
+
+.description {
+	color:#7F7F7F;
+	font-size: 1em;
+	margin: 1em 0;
+	line-height: 1.4em;
+}
+
+.pro-feature {
+	padding-left:3em;
+	box-sizing: border-box;
+	background: url('/images/feature-check.svg') no-repeat left top;	
+}
+
+.last-pro {
+	margin-bottom: 3.215em;
+}
+
 .formrow {
 	margin-top:3.125em;
 	box-sizing: border-box;
@@ -137,7 +215,7 @@ input[type=text], input[type=url], textarea {
     border-radius: 0.125em;
     resize: vertical;
     transition: 0.2s;
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: sans-serif;
 }
 
 textarea {
@@ -174,7 +252,7 @@ input[type=text]:focus, input[type=text]:active, input[type=url]:focus, input[ty
 }
 
 .normalbtn {
-	font-family: 'Sofia Pro', sans-serif;
+	font-family: sans-serif;
 	font-size: 0.875em;
 	line-height: 0.875em;
 	padding: 1em 2.5em;
@@ -236,7 +314,7 @@ aside {
 }
 
 #previewsh {
-	font-family: 'Sofia Pro', sans-serif;
+	font-family: sans-serif;
 	width: 100%;
 	font-size: 1em;
 	background: #1A2136;
@@ -494,6 +572,19 @@ aside{
 	margin-bottom:6.25em;
 }
 
+#metalink {
+	margin-bottom:8.125em;
+}
+
+#metalink button {
+	display: none;
+}
+
+#metalink input[type=url] {
+	width: 100%;
+	text-align: center;
+}
+
 #previewsh {
 	display: block;
 }
@@ -506,11 +597,6 @@ aside{
 main{
 	width: 100%;
 }
-
-#formblock {
-	margin-bottom: 8.125em;
-}
-
 
 }
 
@@ -581,7 +667,7 @@ nav a:link, nav a:visited {
 
 .savebtn {
 	width: 48%;
-	margin-right:4%;
+	margin-right:1%;
 }
 
 #previewwrapper {

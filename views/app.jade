@@ -3,11 +3,8 @@ html(lang='en')
   head
     meta(charset='utf-8')
     title MetaShift
-    script(src='https://use.typekit.net/vkt3faw.js')
-    script.
-      try{Typekit.load({ async: true });}catch(e){}
       
-  body.tk-sofia-pro
+  body
     #app(data-link-json="#{JSON.stringify(link)}")
   script(src="#{webpack_asset('app', 'js')}")
   link(rel='stylesheet', href="#{webpack_asset('app', 'css')}")
