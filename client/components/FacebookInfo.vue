@@ -3,12 +3,12 @@
     <h2>Facebook Information</h2>
     <div class="formrow">
       <label for="facebook-title" class="formlabel">Title (Required)</label>
-      <a href="#" class="helplink" v-tooltip="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">Help</a>
+      <a href="#" class="helplink" v-tooltip="'The title of your object as it should appear within the Facebook Open Graph.'">Help</a>
       <input name="title" type="text" id="facebook-title" v-model="meta['title']" v-validate="{required: true}" :class="{'error': errors.has('title') }" class="textinput" placeholder="Give it a catchy title" />
     </div>
     <div class="formrow">
       <label for="facebook-description" class="formlabel">Description</label>
-      <a href="#" class="helplink" v-tooltip="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">Help</a>
+      <a href="#" class="helplink" v-tooltip="'A one to two sentence description of your object.'">Help</a>
       <textarea type="text" id="facebook-description" v-model="meta['description']" class="textinput" placeholder="Make your description something good" ></textarea>
     </div>
     <div class="formfooter">

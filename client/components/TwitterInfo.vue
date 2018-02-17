@@ -3,17 +3,17 @@
     <h2>Twitter Information</h2>
     <div class="formrow">
       <label for="twitter-title" class="formlabel">Title (Required)</label>
-      <a href="#" class="helplink" v-tooltip="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">Help</a>
+      <a href="#" class="helplink" v-tooltip="'Title of content (max 70 characters)'">Help</a>
       <input name="title" type="text" id="twitter-title" v-model="meta['title']" v-validate="{required: true}" :class="{'error': errors.has('title') }" class="textinput" placeholder="Give it a catchy title" />
     </div>
     <div class="formrow">
       <label for="twitter-description" class="formlabel">Description</label>
-      <a href="#" class="helplink" v-tooltip="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">Help</a>
+      <a href="#" class="helplink" v-tooltip="'Description of content (maximum 200 characters)'">Help</a>
       <textarea type="text" id="twitter-description" v-model="meta['description']" class="textinput" placeholder="Make your description something good" ></textarea>
     </div>
     <div class="formrow">
       <label for="twitter-attribution" class="formlabel">User Attribution</label>
-      <a href="#" class="helplink" v-tooltip="'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">Help</a>
+      <a href="#" class="helplink" v-tooltip="'@username of content creator'">Help</a>
       <input type="text" id="twitter-attribution" class="textinput" placeholder="@username" />
     </div>
     <div class="formfooter">
