@@ -69,6 +69,11 @@ router.post('/contact', function(req, res, next) {
 
 router.get('/:view_hash', function(req, res, next) {
   models.Link.findOne({ where: {viewHash: req.params.view_hash} }).then(link => {
+    models.Visitor.create({
+      linkId: link.id,
+      userAgent: req.get('User-Agent'),
+      ip: req.ip,
+    });
     res.render('show', {link: link})
   })
 })
