@@ -1,7 +1,7 @@
 <template>
   <div>
     <aside>
-      <link-preview v-bind="{twitterMeta: link.twitterMeta, facebookMeta: link.facebookMeta}"/>
+      <link-preview v-bind="{shortlink: shortlink, twitterMeta: link.twitterMeta, facebookMeta: link.facebookMeta}"/>
     </aside>
     <main>
       <div id="main-wrapper">
@@ -27,7 +27,7 @@
         <section id="metalink">
         	Here’s your new link to share on social media
         	<div>
-        		<input type="url" value="https://metashift.io/4isd8" />
+        		<input type="url" v-model="shortlink"/>
         		<button href="#">Copy</button>
         	</div>
         </section>
@@ -50,7 +50,7 @@ export default {
   data () {
     return {
       currentTab: 'basic',
-      link: {}
+      link: {},
     }
   },
   components: {
@@ -59,6 +59,11 @@ export default {
     'facebook-info': FacebookInfo,
     'pro-features': ProFeatures,
     'link-preview': LinkPreview
+  },
+  computed: {
+    shortlink() {
+      return `https://metashift.io/${this.link.viewHash}`;
+    }
   },
   methods: {
     sync(key) {

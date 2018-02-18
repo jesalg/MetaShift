@@ -8,7 +8,7 @@
       </div>
     </div>
     <div id="twitter-plrg-caption">
-      This is where your tweet text appears. This is all handled by you when you post the tweet. <a href="#">https://metashift.co/4isd8</a>
+      This is where your tweet text appears. This is all handled by you when you post the tweet. <a :href="shortlink">{{shortlink}}</a>
       <span id="twitter-timestamp">7:00 AM - Oct 25, 2017</span>
     </div>
     <div id="twitter-plrg-image">
@@ -25,6 +25,7 @@
 <script>
 export default {
   props: {
+    shortlink: null, 
     meta: {},
   }
 }
