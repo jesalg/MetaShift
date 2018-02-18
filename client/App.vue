@@ -1,7 +1,7 @@
 <template>
   <div>
     <aside>
-      <link-preview v-bind="{shortlink: shortlink, twitterMeta: link.twitterMeta, facebookMeta: link.facebookMeta}"/>
+      <link-preview v-if="showPreview" v-bind="{shortlink: shortlink, twitterMeta: link.twitterMeta, facebookMeta: link.facebookMeta}"/>
     </aside>
     <main>
       <div id="main-wrapper">
@@ -46,6 +46,8 @@ import LinkPreview from './components/LinkPreview.vue'
 import Noty from 'noty'
 import 'noty/lib/noty.css'
 
+import is from 'is_js'
+
 export default {
   data () {
     return {
@@ -63,6 +65,9 @@ export default {
   computed: {
     shortlink() {
       return `https://metashift.io/${this.link.viewHash}`;
+    },
+    showPreview() {
+      return is.not.mobile();
     }
   },
   methods: {
