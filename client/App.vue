@@ -28,7 +28,7 @@
         	Here’s your new link to share on social media
         	<div>
         		<input type="url" v-model="shortlink"/>
-        		<button href="#">Copy</button>
+        		<button type="button" v-clipboard:copy="shortlink" v-clipboard:success="onCopy">Copy</button>
         	</div>
         </section>
       </div>
@@ -66,6 +66,9 @@ export default {
     }
   },
   methods: {
+    onCopy: function (e) {
+      new Noty({text: `You just copied: ${this.shortlink}`, type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
+    },
     sync(key) {
       if (!this.link.twitterMeta[key]) {
         this.$set(this.link.twitterMeta, key, this.link.meta[key])

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 import VueResource from 'vue-resource'
+import VueClipboard from 'vue-clipboard2'
 import VTooltip from 'v-tooltip'
 import moment from 'moment'
 import App from './App.vue'
@@ -12,6 +13,7 @@ Vue.filter('formatDate', function(value) {
 });
 Vue.use(VeeValidate);
 Vue.use(VueResource);
+Vue.use(VueClipboard)
 Vue.use(VTooltip, {defaultOffset: 5})
 
 new Vue({
