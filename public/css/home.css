@@ -75,6 +75,7 @@ header {
 
 #form-getstarted input {
 	width: 80%;
+	line-height: normal;
 	border: none;
 	margin: 0;
 	padding: 0;

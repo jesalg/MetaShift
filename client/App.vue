@@ -31,6 +31,13 @@
         		<button type="button" v-clipboard:copy="shortlink" v-clipboard:success="onCopy">Copy</button>
         	</div>
         </section>
+        <section class="pageblock pageblockpad" id="emaillink">
+        	<h2>Want to be able to edit your link later? Give us your email address and we will send you a link.</h2>
+        	<form>
+        		<input type="email" class="textinput" placeholder="Enter your email address" />
+        		<button class="formbutton">Send Link</button>
+        	</form>
+        </section>
       </div>
     </main>
   </div>

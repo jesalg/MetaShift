@@ -8,6 +8,7 @@ html, body {
 
 h2 {
 	font-size: 1.5em;
+	line-height: 1.5em;
 	font-weight: 500;
 	color: #000;
 }
@@ -72,7 +73,7 @@ header {
 	letter-spacing: -0.0125em;
 }
 
-#formblock {
+#formblock, .pageblock {
 	margin: 3.125em 0;
 	border-radius: 0 0 0.5em 0.5em;
 	border: 1px solid #DBDBDB;
@@ -167,7 +168,7 @@ nav a.selected:link, nav a.selected:visited {
 	letter-spacing: 0.08em;
 }
 
-#basicinfo {
+#basicinfo, .pageblockpad {
 	padding: 3.125em 3.125em 0 3.125em;
 }
 
@@ -200,9 +201,10 @@ nav a.selected:link, nav a.selected:visited {
 	box-sizing: border-box;
 }
 
-input[type=text], input[type=url], textarea {
+input[type=text], input[type=email], input[type=url], textarea {
 	display: block;
 	font-size: 0.9em;
+	line-height: normal;
 	padding: 1.1em;
 	margin: 0.6em 0 3.125em 0;
 	width: 100%;
@@ -216,6 +218,25 @@ input[type=text], input[type=url], textarea {
     resize: vertical;
     transition: 0.2s;
     font-family: sans-serif;
+}
+
+input[type=email]{
+	display: inline;
+	width: 70%;
+}
+
+#emaillink form {
+	margin-top:1em;
+}
+
+#emaillink button {
+	background: #F7476E;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 1em 1.5em;
+	transition: 0.2s;
+	margin-left: 0.2em;
 }
 
 textarea {
@@ -572,8 +593,8 @@ aside{
 	margin-bottom:6.25em;
 }
 
-#metalink {
-	margin-bottom:8.125em;
+#emaillink {
+	margin-bottom:0;
 }
 
 #metalink button {
@@ -600,11 +621,11 @@ main{
 
 }
 
-@media only screen and (max-width: 660px){
+@media only screen and (max-width: 1125px){
 
 body {
 	border-top: 8px solid #F7476E;
-	font-size: 14px;
+	font-size: 32px;
 }
 
 #main-wrapper {
@@ -612,6 +633,8 @@ body {
 	max-width: none;
 	padding: 3em 0 0 0;
 }
+
+aside {display: none;}
 
 header {
 	padding: 0 5%;
@@ -622,8 +645,19 @@ header {
 	padding: 0 5%;
 }
 
-#formblock {
+#formblock, .pageblock {
 	margin-top:2.5em;
+}
+
+input[type=email]{
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+#emaillink button {
+	width: 100%;
+	margin: 0 0 3.125em 0;
+	
 }
 
 nav {
