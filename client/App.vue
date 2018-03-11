@@ -31,12 +31,12 @@
         		<button type="button" v-clipboard:copy="shortlink" v-clipboard:success="onCopy">Copy</button>
         	</div>
         </section>
-        <section class="pageblock pageblockpad" id="emaillink">
+        <section class="pageblock pageblockpad" id="emaillink" v-if="!hasEmail">
         	<h2>Want to be able to edit your link later? Give us your email address and we will send you a link.</h2>
-        	<form>
-        		<input type="email" class="textinput" placeholder="Enter your email address" />
-        		<button class="formbutton">Send Link</button>
-        	</form>
+        	<div v-tooltip="{ content: 'Please enter a valid email', trigger: 'manual', show: errors.has('email')}">
+        		<input name='email' type="email" class="textinput" v-model="link.email" v-validate="{email: true}" placeholder="Enter your email address" />
+        		<button type="submit" class="formbutton" @click="save">Send Link</button>
+        	</div>
         </section>
       </div>
     </main>
@@ -58,6 +58,7 @@ import is from 'is_js'
 export default {
   data () {
     return {
+      hasEmail: false,
       currentTab: 'basic',
       link: {},
     }
@@ -96,7 +97,8 @@ export default {
             link: this.link.meta['url'],
             meta: this.link.meta,
             facebookMeta: this.link.facebookMeta,
-            twitterMeta: this.link.twitterMeta
+            twitterMeta: this.link.twitterMeta,
+            email: is.email(this.link.email) ? this.link.email : null
           }
           const request = this.link.id ? this.$http.patch('/link/' + this.link.id, data) :
                             this.$http.post('/link', data)
@@ -114,6 +116,7 @@ export default {
   },
   created() {
     this.link = this.$parent.link;
+    this.hasEmail = is.email(this.link.email)
   }
 }
 </script>

@@ -6,7 +6,7 @@
     </div>
     <h1  class="set-width intro-h1">Easily customize link previews on social media</h1>
     <div id="form-getstarted" class="set-width" v-tooltip="{ content: 'Please enter a valid URL', trigger: 'manual', show: errors.has('url')}">
-      <input name="url" type="url" v-model="url" v-validate="{required: true, url: true}" placeholder="Enter the url you want to customize"/>
+      <input name="url" type="url" v-model="url" v-validate="{required: true, url: true}" @keyup.enter="start" placeholder="Enter the url you want to customize"/>
       <button type="submit" @click="start">Get Started</button>
     </div>
     <div id="salestext" class="set-width intro-h1">

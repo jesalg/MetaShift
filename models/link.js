@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     meta: DataTypes.JSONB,
     facebookMeta: DataTypes.JSONB,
     twitterMeta: DataTypes.JSONB,
-    email: { type: DataTypes.STRING, validate: {isEmail: true} },
+    email: { type: DataTypes.STRING, allowNull: true, validate: {isEmail: true} },
     editHash: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, unique: true },
     viewHash: { type: DataTypes.STRING, defaultValue: function() { return shortid.generate() }, unique: true },
   }, {
