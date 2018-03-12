@@ -12,7 +12,7 @@
       <span id="twitter-timestamp">7:00 AM - Oct 25, 2017</span>
     </div>
     <div id="twitter-plrg-image">
-      <img src="/images/twitter-placeholder.png" />
+      <img :src="meta['image'] || '/images/twitter-placeholder.png'" width="100%" />
     </div>
     <div id="twitter-meta">
       <div id="twitter-plrg-headline">{{ meta['title'] || 'This Is A Headline' }}</div>

@@ -29,6 +29,7 @@
 <script>
 import TwitterPreview from './TwitterPreview.vue'
 import FacebookPreview from './FacebookPreview.vue'
+
 export default {
   props: {
     shortlink: null,

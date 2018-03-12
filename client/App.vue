@@ -54,6 +54,7 @@ import Noty from 'noty'
 import 'noty/lib/noty.css'
 
 import is from 'is_js'
+import normalizeUrl from 'normalize-url'
 
 export default {
   data () {
@@ -76,6 +77,11 @@ export default {
     },
     showPreview() {
       return is.not.mobile();
+    }
+  },
+  watch: {
+    'link.meta.url': function() {
+      this.getLinkMeta();
     }
   },
   methods: {
@@ -112,7 +118,30 @@ export default {
           });
         }
       });
-    }
+    },
+    getLinkMeta() {
+      if (is.url(this.link.meta['url'])) {
+        const request = this.$http.post('/meta', {link: normalizeUrl(this.link.meta['url'])})
+        request.then((response) => {
+            if (response.data.twitter && response.data.twitter['twitterImage']) {
+              this.$nextTick(() => {
+                this.link.twitterMeta = Object.assign({image: response.data.twitter['twitterImage'][0]['url']}, this.link.twitterMeta);
+              })
+            } else if (response.data.ogp && response.data.ogp['ogImage']) {
+              this.$nextTick(() => {
+                this.link.twitterMeta = Object.assign({image: response.data.ogp['ogImage'][0]['url']}, this.link.twitterMeta);
+              })
+            }
+            if (response.data.ogp && response.data.ogp['ogImage']) {
+              this.$nextTick(() => {
+                this.link.facebookMeta = Object.assign({image: response.data.ogp['ogImage'][0]['url']}, this.link.facebookMeta);
+              })
+            }
+          }, () => {
+            //show error
+          });
+      }
+    }    
   },
   created() {
     this.link = this.$parent.link;

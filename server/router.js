@@ -1,8 +1,10 @@
 import express from 'express'
 import models  from '../models';
 import request from 'request';
+import unfurl from 'unfurl.js';
 
 const router = express.Router()
+
 const sendEmail = function(link) {
   const sgMail = require('@sendgrid/mail');
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -90,6 +92,13 @@ router.post('/contact', function(req, res, next) {
   }
 
   request(options, callback);
+})
+
+router.post('/meta', function(req, res, next) {
+  unfurl(req.body.link)
+  .then((result) => {
+    res.json(result);
+  });
 })
 
 router.get('/:view_hash', function(req, res, next) {
