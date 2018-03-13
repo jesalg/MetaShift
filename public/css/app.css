@@ -573,10 +573,6 @@ button:focus {
 
 @media only screen and (max-width: 1310px){
 
-body {
-	xfont-size: 14px;
-}
-
 aside{
 	width: 100%;
 	position: fixed;
@@ -593,10 +589,6 @@ aside{
 	margin-bottom:6.25em;
 }
 
-#emaillink {
-	margin-bottom:0;
-}
-
 #metalink button {
 	display: none;
 }
@@ -604,6 +596,10 @@ aside{
 #metalink input[type=url] {
 	width: 100%;
 	text-align: center;
+}
+
+#emaillink {
+	margin-bottom:8.25em;
 }
 
 #previewsh {
@@ -652,6 +648,10 @@ header {
 input[type=email]{
 	width: 100%;
 	margin-bottom: 1em;
+}
+
+#emaillink {
+	margin-bottom:0;
 }
 
 #emaillink button {
