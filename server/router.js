@@ -15,6 +15,7 @@ const sendEmail = function(link) {
     subject: `Link To Edit: ${link.url}`,
     templateId: '04f32a65-1333-41cf-be4d-857cfdb1add0',
     substitutions: {
+      realLink: link.url,
       metashiftLink: `http://metashift.io/link/${link.editHash}`
     },
   };
