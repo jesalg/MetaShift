@@ -1,7 +1,7 @@
 <template>
   <div id="fb-plrg">
     <div id="fb-plrg-image">
-      <img src="/images/fb-placeholder.png" />
+      <img :src="meta['image'] || '/images/fb-placeholder.png'" width="100%" />
     </div>
     <div id="fb-meta">
       <div id="fb-plrg-headline">{{ meta['title'] || 'This Is A Headline' }}</div>
