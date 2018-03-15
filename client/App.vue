@@ -114,29 +114,27 @@ export default {
 
             new Noty({text: 'Success', type: 'success', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
           }, () => {
-            //show error
+            new Noty({text: 'Error', type: 'error', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
           });
+        } else {
+          this.error();
         }
       });
+    },
+    error() {
+      new Noty({text: 'Please make sure all the fields are valid before saving', type: 'error', layout: 'topRight', timeout:1000, theme: 'metroui'}).show();
     },
     getLinkMeta() {
       if (is.url(this.link.meta['url'])) {
         const request = this.$http.post('/meta', {link: normalizeUrl(this.link.meta['url'])})
         request.then((response) => {
-            if (response.data.twitter && response.data.twitter['twitterImage']) {
-              this.$nextTick(() => {
-                this.link.twitterMeta = Object.assign({image: response.data.twitter['twitterImage'][0]['url']}, this.link.twitterMeta);
-              })
-            } else if (response.data.ogp && response.data.ogp['ogImage']) {
-              this.$nextTick(() => {
-                this.link.twitterMeta = Object.assign({image: response.data.ogp['ogImage'][0]['url']}, this.link.twitterMeta);
-              })
-            }
-            if (response.data.ogp && response.data.ogp['ogImage']) {
-              this.$nextTick(() => {
-                this.link.facebookMeta = Object.assign({image: response.data.ogp['ogImage'][0]['url']}, this.link.facebookMeta);
-              })
-            }
+            const twitterImg = response.data.twitter && response.data.twitter['twitterImage'] && response.data.twitter['twitterImage'][0]['url']
+            const ogImg = response.data.ogp && response.data.ogp['ogImage'] && response.data.ogp['ogImage'][0]['url']
+            this.$nextTick(() => {
+              this.link.meta = Object.assign({image: twitterImg || ogImg}, this.link.meta);
+              this.link.twitterMeta = Object.assign({image: twitterImg || ogImg}, this.link.twitterMeta);
+              this.link.facebookMeta = Object.assign({image: ogImg || twitterImg}, this.link.facebookMeta);
+            })
           }, () => {
             //show error
           });
