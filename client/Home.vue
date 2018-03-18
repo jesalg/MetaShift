@@ -2,7 +2,7 @@
   <div>
   <header>
     <div id="logobar"  class="set-width">
-      <span id="chromeextension">Grab Our <a href="" target="_blank">Chrome Extension</a></span>
+      <span id="chromeextension">Grab Our <a href="https://chrome.google.com/webstore/detail/metashift/mbcaibibhdifmbbndghcoijfoeinonle" target="_blank">Chrome Extension</a></span>
     </div>
     <h1  class="set-width intro-h1">Easily customize link previews on social media</h1>
     <div id="form-getstarted" class="set-width" v-tooltip="{ content: 'Please enter a valid URL', trigger: 'manual', show: errors.has('url')}">
