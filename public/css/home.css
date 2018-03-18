@@ -256,6 +256,14 @@ textarea:focus, input:focus{
 	background: #D23F5F;
 }
 
+footer {
+	padding: 2em 0;
+	text-align: center
+}
+
+footer p {
+	color: #7F7F7F;
+}
 
 /* Utilities */
 

@@ -69,6 +69,10 @@
       </template>
     </div>
   </section>
+
+  <footer>
+    <p>Made with <span style="color:red;font-size:x-large">&hearts;</span> in California by <a target="_blank" href="https://jes.al/">Jesal Gadhia</a> & <a target="_blank" href="http://hellomarcus.com/">Marcus Edvalson</a></p>
+  </footer>
   </div>
 </template>
 
