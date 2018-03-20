@@ -583,6 +583,8 @@ aside{
 	z-index: 1;
 	float:none;
 	min-height: auto;
+	max-height: 100%;
+	overflow: auto;
 }
 
 #previewwrapper {

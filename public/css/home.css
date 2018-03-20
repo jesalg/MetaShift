@@ -108,6 +108,20 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+#samplelink {
+	color: #6A7E8E;
+	margin-top: 2em;
+}
+
+#samplelink a:link, #samplelink a:visited {
+	color: #F7476E;
+}
+
+#samplelink a:hover {
+	color: #D23F5F;
+}
+
+
 #salestext {
 	color: #6A7E8E;
 	font-size: 1.625em;
