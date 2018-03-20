@@ -73,7 +73,7 @@ export default {
   },
   computed: {
     shortlink() {
-      return `https://metashift.io/${this.link.viewHash}`;
+      return `https://www.metashift.io/${this.link.viewHash}`;
     },
     showPreview() {
       return is.not.mobile();
@@ -100,7 +100,8 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           const data = {
-            link: this.link.meta['url'],
+            link: normalizeUrl(this.link.meta['url']),
+            viewHash: this.link.viewHash,
             meta: this.link.meta,
             facebookMeta: this.link.facebookMeta,
             twitterMeta: this.link.twitterMeta,

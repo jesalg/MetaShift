@@ -47,6 +47,7 @@ router.post('/link', function(req, res, next) {
       twitterMeta: req.body.twitterMeta,
       facebookMeta: req.body.facebookMeta,
       email: req.body.email,
+      viewHash: req.body.viewHash,
     }).then((link) => {
       if (shouldSendEmail) {
         sendEmail(link);
@@ -103,7 +104,7 @@ router.post('/meta', function(req, res, next) {
 })
 
 router.get('/:view_hash', function(req, res, next) {
-  models.Link.findOne({ where: {viewHash: req.params.view_hash} }).then(link => {
+  models.Link.findOne({ where: {viewHash: req.params.view_hash} }).then((link) => {
     models.Visitor.create({
       linkId: link.id,
       userAgent: req.get('User-Agent'),
