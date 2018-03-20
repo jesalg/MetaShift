@@ -1,9 +1,7 @@
 doctype html
 html(lang='en')
   head
-    meta(charset='utf-8')
-    title MetaShift
-      
+    include ./includes/head.jade      
   body
     #app(data-link-json="#{JSON.stringify(link)}")
   script(src="#{webpack_asset('app', 'js')}")

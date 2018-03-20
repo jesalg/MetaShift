@@ -2,12 +2,12 @@
   <div>
   <header>
     <div id="logobar"  class="set-width">
-      <span id="chromeextension">Grab Our <a href="" target="_blank">Chrome Extension</a></span>
+      <span id="chromeextension">Grab Our <a href="https://chrome.google.com/webstore/detail/metashift/mbcaibibhdifmbbndghcoijfoeinonle" target="_blank">Chrome Extension</a></span>
     </div>
     <h1  class="set-width intro-h1">Easily customize link previews on social media</h1>
     <div id="form-getstarted" class="set-width" v-tooltip="{ content: 'Please enter a valid URL', trigger: 'manual', show: errors.has('url')}">
       <input name="url" type="url" v-model="url" v-validate="{required: true, url: true}" @keyup.enter="start" placeholder="Enter the url you want to customize"/>
-      <button type="submit" @click="start">Get Started</button>
+      <button type="submit" @click="start" class="normalbtn">Get Started</button>
     </div>
     <div id="salestext" class="set-width intro-h1">
       No more waiting for the IT department to edit code so you can share a page. With MetaShift you can customize your link preview yourself.<br/> <span class="pinkhighlight">Absolutely no coding</span> 
@@ -62,13 +62,17 @@
       <template v-if="!subscribed">
         <h3>We are actively building a product to make managing social media links a breeze. Subscribe below to learn more.</h3>
         <input name="email" type="email" v-model="email" v-validate="{required: true, email: true}" placeholder="Enter Your Email Address" v-tooltip="{ content: 'Please enter a valid email', trigger: 'manual', show: errors.has('email')}"/>
-        <button @click="subscribe">Subscribe</button>
+        <button @click="subscribe" class="normalbtn">Subscribe</button>
       </template>
       <template v-else>
         <h3>Thanks, we will keep you posted!</h3>
       </template>
     </div>
   </section>
+
+  <footer>
+    <p>Made with <span style="color:red;font-size:x-large">&hearts;</span> in California by <a target="_blank" href="https://jes.al/">Jesal Gadhia</a> & <a target="_blank" href="http://hellomarcus.com/">Marcus Edvalson</a></p>
+  </footer>
   </div>
 </template>
 

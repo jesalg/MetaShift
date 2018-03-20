@@ -40,6 +40,14 @@ header {
 	margin: 0 auto;
 }
 
+.normalbtn {
+	cursor: pointer;
+}
+
+.normalbtn:hover {
+	background: #858585;
+}
+
 #logobar {
 	color: #DFDFDF;
 	font-size: 1.25em;
@@ -256,6 +264,14 @@ textarea:focus, input:focus{
 	background: #D23F5F;
 }
 
+footer {
+	padding: 2em 0;
+	text-align: center
+}
+
+footer p {
+	color: #7F7F7F;
+}
 
 /* Utilities */
 

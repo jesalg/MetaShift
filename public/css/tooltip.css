@@ -1,4 +1,5 @@
 .tooltip {
+    font-size: small;
     display: block !important;
     z-index: 10000;
   }

@@ -7,6 +7,11 @@
       <input name="title" type="text" id="basic-title" v-model="meta['title']" v-validate="{required: true}" :class="{'error': errors.has('title') }" v-on:blur="sync('title')" class="textinput" placeholder="Give it a catchy title" />
     </div>
     <div class="formrow">
+      <label for="basic-title" class="formlabel">Image</label>
+      <a href="#" class="helplink" v-tooltip="'Thumbnail image for the Google+ preview card.'">Help</a>
+      <input name="image" type="text" id="basic-title" v-model="meta['image']" v-validate="{url: true}" :class="{'error': errors.has('image') }" v-on:blur="sync('image')" class="textinput" placeholder="https://www.example.com/image.jpg" />
+    </div>
+    <div class="formrow">
       <label for="basic-description" class="formlabel">Description</label>
       <a href="#" class="helplink" v-tooltip="'Short and accurate summary of the content of the page.'">Help</a>
       <textarea type="text" id="basic-description" v-model="meta['description']" v-on:blur="sync('description')" class="textinput" placeholder="Make your description something good" ></textarea>
@@ -40,6 +45,8 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           this.$parent.save();
+        } else {
+          this.$parent.error();
         }
       });
     },
