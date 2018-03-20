@@ -40,6 +40,14 @@ header {
 	margin: 0 auto;
 }
 
+.normalbtn {
+	cursor: pointer;
+}
+
+.normalbtn:hover {
+	background: #858585;
+}
+
 #logobar {
 	color: #DFDFDF;
 	font-size: 1.25em;
