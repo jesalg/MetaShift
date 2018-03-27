@@ -9,7 +9,7 @@
       <input name="url" type="url" v-model="url" v-validate="{required: true, url: true}" @keyup.enter="start" placeholder="Enter the url you want to customize"/>
       <button type="submit" @click="start" class="normalbtn">Get Started</button>
     </div>
-    <div id="samplelink" class="set-width">Example: <a href="http://www.metashift.io/link?url=metashift.io">MetaShift.io</a></div>
+    <div id="samplelink" class="set-width">Example: <a href="/link?url=example.com">example.com</a></div>
     <div id="salestext" class="set-width intro-h1">
       No more waiting for the IT department to edit code so you can share a page. With MetaShift you can customize your link preview yourself.<br/> <span class="pinkhighlight">Absolutely no coding</span> 
     </div>

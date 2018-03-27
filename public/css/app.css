@@ -548,6 +548,10 @@ aside {
 	margin-right:0.5em;
 }
 
+#previewshbtn svg.rotated {
+	transform: rotate(180deg);
+}
+
 /* UTILITIES */
 
 .clearfix::after {
