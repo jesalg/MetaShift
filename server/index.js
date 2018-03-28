@@ -29,7 +29,7 @@ app.use(cookieParser())
 app.use(express.static(path.join('public')))
 
 if (NODE_ENV === 'production') {
-  app.use(forceSSL);
+  //app.use(forceSSL);
   app.use(express.static(__dirname + '/dist'));
 } else {
   const compiler = webpack(config)
