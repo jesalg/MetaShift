@@ -8,6 +8,7 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackAssets from 'express-webpack-assets'
+import forceSSL from 'express-force-ssl'
 
 import router from './router'
 import config from '../webpack.config'
@@ -28,6 +29,7 @@ app.use(cookieParser())
 app.use(express.static(path.join('public')))
 
 if (NODE_ENV === 'production') {
+  app.use(forceSSL);
   app.use(express.static(__dirname + '/dist'));
 } else {
   const compiler = webpack(config)
